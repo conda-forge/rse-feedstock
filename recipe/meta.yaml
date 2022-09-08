@@ -1,5 +1,5 @@
 {% set name = "rse" %}
-{% set version = "0.0.44" %}
+{% set version = "0.0.45" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a85b5f4f35e72a5149298b4f5ce84155d5f5a513ff675e7930d98e28bf9eabca
+  sha256: 75b04bd4f07ef71c02ac7d323bc8f3757ea4154c1628a246897e8cc3243bcc6f
 
 build:
   number: 0

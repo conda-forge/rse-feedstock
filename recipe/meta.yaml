@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e19945390c98869e1b2068f7a773e24579920c5562cbf5abe4246441aa1b3a1e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - rse=rse.client:main
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3
+    - python {{ python_min }}
     - pytest-runner
   run:
-    - python >=3
+    - python >={{ python_min }}
     - sqlalchemy
     - requests >=2.23.0
     - flask
@@ -97,6 +97,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 
 about:
